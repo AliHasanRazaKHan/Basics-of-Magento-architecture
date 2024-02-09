@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+
+    <!-- Virtual override of based handler fileName -->
+    <virtualType name="Unit1LoggerHandler" type="Magento\Framework\Logger\Handler\Base">
+        <arguments>
+            <argument name="fileName" xsi:type="string">/var/log/unit1.log</argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Virtual override of Monolog logger -->
+    <virtualType name="Unit1Logger" type="Magento\Framework\Logger\Monolog">
+        <arguments>
+            <argument name="handlers" xsi:type="array">
+                <item name="unit1LoggerHandler" xsi:type="object">Unit1LoggerHandler</item>
+            </argument>
+        </arguments>
+    </virtualType>
+
+    <!-- Redefining the $logger parameter of our Practice\Unit1\Controller\Index\Index type -->
+    <type name="Practice\Unit1\Controller\Index\Index">
+        <arguments>
+            <argument name="logger" xsi:type="object">Unit1Logger</argument>
+        </arguments>
+    </type>
+
+</config>
+
