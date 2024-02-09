@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+    <default>
+        <unit1>
+            <email>
+                <recipient_email><![CDATA[rkah310@gmail.com]]></recipient_email>
+                <sender_email_identity>custom2</sender_email_identity>
+                <email_template>unit1_email_email_template</email_template>
+            </email>
+        </unit1>
+    </default>
+</config>

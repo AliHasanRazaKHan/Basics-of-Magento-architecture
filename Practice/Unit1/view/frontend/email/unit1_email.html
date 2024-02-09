@@ -1,0 +1,20 @@
+<!--@subject {{trans "Unit1 Email"}} @-->
+<!--@vars {
+"var data.var1":"Var 1",
+"var data.var2":"Var 2"
+} @-->
+
+{{template config_path="design/email/header_template"}}
+
+<table class="message-details">
+    <tr>
+        <td><strong>{{trans "Var1"}}</strong></td>
+        <td>{{var data.var1}}</td>
+    </tr>
+    <tr>
+        <td><strong>{{trans "Var2"}}</strong></td>
+        <td>{{var data.var2}}</td>
+    </tr>
+</table>
+
+{{template config_path="design/email/footer_template"}}
